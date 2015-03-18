@@ -150,7 +150,8 @@ itemlines:
 	| itemize				{ $$ = $1; }
 	;
 itemline:
-	T_ITEM text ENDLS			{ $$ = concat (3, "<li>", $2, "</li>\n"); }
+	T_ITEM '[' T_STRING ']' multiline	{ $$ = concat (5, "<li>", $3, " ", $5, "</li>\n"); }
+	| T_ITEM text ENDLS			{ $$ = concat (3, "<li>", $2, "</li>\n"); }
 	;	
 		
 bold:
@@ -200,7 +201,7 @@ int yywrap(void){
 
 
 int main(int argc, char** argv) {
-	yydebug = 0;
+	yydebug = 1;
 	has_title = 0;
 	count_bib= 0;
 	title_name = (char *) malloc (STRSIZE*sizeof(char));

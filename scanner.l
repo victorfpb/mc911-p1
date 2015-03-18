@@ -25,7 +25,7 @@ END_BIB				\\end\{thebibliography\}
 ENDL				\n
 
 FLOAT 				[0-9]+\.[0-9]+
-STRING 				[a-zA-Z0-9\-.,:;!?]+[ a-zA-Z0-9\-,.;:!?\(\)\[\]+^\*/]*
+STRING 				[a-zA-Z0-9\-.,:;!?]+[ a-zA-Z0-9\-,.;:!?\(\)+^\*/]*
 WHITESPACE 			[ \r\t]+
 DIGIT  				[0-9]+
 ANY_CHAR 			.
